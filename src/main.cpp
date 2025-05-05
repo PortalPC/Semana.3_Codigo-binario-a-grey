@@ -1,18 +1,16 @@
 #include <Arduino.h>
+#include <util/delay.h>
 
-// put function declarations here:
-int myFunction(int, int);
-
-void setup() {
-  // put your setup code here, to run once:
-  int result = myFunction(2, 3);
+uint8_t bin_to_gray(uint8_t bin) {
+    return bin ^ (bin >> 1);
 }
+int main(void){
 
-void loop() {
-  // put your main code here, to run repeatedly:
-}
+  DDRD = 0xFF;
 
-// put function definitions here:
-int myFunction(int x, int y) {
-  return x + y;
+  uint8_t bin = 0;
+  
+  while(1){
+    unit8_t gray = bin_to_gray(bin);
+  }
 }
