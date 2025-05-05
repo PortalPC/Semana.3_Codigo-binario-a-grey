@@ -12,5 +12,11 @@ int main(void){
   
   while(1){
     unit8_t gray = bin_to_gray(bin);
+    PORTD = (PORTD & 0x0F) | ((gray & 0x0F) << 4);
+    _delay_ms(1000);
+
+    bin = (bin + 1) & 0x0F;
+    
+
   }
 }
